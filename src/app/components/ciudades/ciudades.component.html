@@ -1,0 +1,17 @@
+<p>ciudades</p>
+<div>
+  <ul>
+    <li *ngFor = "let ciudad of ciudades">{{ciudad}}</li>
+  </ul>
+</div>
+<button (click)="ciudades.push('chaco')">Agregar cuidad</button>
+ <ng-container *ngIf="ciudades.length<=3; else masde3ciudades" >
+   <p>Son pocas ciudades</p>
+ </ng-container>
+ <ng-template #masde3ciudades>
+  <p>Ahora hay más ciudades</p>
+ </ng-template>
+
+ <br><br>
+
+
