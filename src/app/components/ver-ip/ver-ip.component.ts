@@ -12,8 +12,8 @@ export class VerIpComponent implements OnInit {
   ip: string;
   constructor(private servicio1Service: Servicio1Service) {  }
 
-  ngOnInit(): void {
-
+  async ngOnInit() {
+    this.ip = await this.servicio1Service.obtenerIp().toPromise();
   }
 
 }
