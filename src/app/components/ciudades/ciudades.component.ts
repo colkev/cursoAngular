@@ -9,8 +9,8 @@ export class CiudadesComponent {
 
   constructor() { }
   ciudades = ['salta', 'jujuy', 'tucuman'];
- /*
+
   ngOnInit(): void {
-  } */
+  }
 
 }

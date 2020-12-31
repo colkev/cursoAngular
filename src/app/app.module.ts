@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
-import { Router, RouterModule, Routes } from '@angular/router';
+import {HttpClientModule } from '@angular/common/http';
 
 
 
@@ -13,11 +13,14 @@ import { CiudadesComponent } from './components/ciudades/ciudades.component';
 import { AnimalesComponent } from './components/animales/animales.component';
 import { PersonasComponent } from './components/personas/personas.component';
 import { FormsModule } from '@angular/forms';
-import { MenuComponent } from './components/menu/menu.component';
 
-const rutas: Routes = [
-  {path: 'menu', component: MenuComponent}
-]
+
+import { VerIpComponent } from './components/ver-ip/ver-ip.component';
+
+// servicios
+import {Servicio1Service} from './servises/servicio1.service';
+
+
 
 @NgModule({
   declarations: [
@@ -25,16 +28,17 @@ const rutas: Routes = [
     CiudadesComponent,
     AnimalesComponent,
     PersonasComponent,
-    MenuComponent,
+    VerIpComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(rutas)
+    HttpClientModule
   ],
-  providers: [],
+
+  providers: [Servicio1Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
